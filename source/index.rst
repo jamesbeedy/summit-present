@@ -63,7 +63,7 @@
   .. list-table::
 
    * - Environment Lifecycle
-   * - Built-ins - service discovery, leader election, 
+   * - Built-Ins - service discovery, leader election 
    * - Community Driven
 
 
@@ -129,6 +129,7 @@
         - 3x cache - AWS
         - 3x database - AWS
         - 3x webapp - AWS
+
 
 .. revealjs:: Test Env
  :title-heading: h2
