@@ -140,7 +140,7 @@
  :subtitle: 
  :subtitle-heading: h4
 
- .. image:: _images/PRM_MIN.png
+ .. image:: _images/PRM-MIN.png
     :width: 600
     :height: 550
     :alt: PRMMIN
@@ -151,7 +151,7 @@
  :subtitle: 
  :subtitle-heading: h4
 
- .. image:: _images/PRM_MED.png
+ .. image:: _images/PRM-MED.png
     :width: 600
     :height: 550
     :alt: PRMMED
@@ -162,7 +162,7 @@
  :subtitle: 
  :subtitle-heading: h4
 
- .. image:: _images/PRM_MAX.png
+ .. image:: _images/PRM-MAX.png
     :width: 600
     :height: 550
     :alt: PRMMAX
