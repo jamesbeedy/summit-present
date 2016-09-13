@@ -17,12 +17,7 @@
 
     Sys admin, net admin, storage admin, hacker, stacker
 
-    - GPU hadware hacker - 
-
-    - First 24TB SSD Raid -
-
-    - Open Source Community -
-    
+     
 .. revealjs:: The beginning
 
   .. rst-class:: fragment
