@@ -172,7 +172,7 @@
   `bdx on irc`
 
  .. image:: _images/system76_logo_primary.png
-    :width: 600
+    :width: 800
     :height: 550
     :alt: system76
 
