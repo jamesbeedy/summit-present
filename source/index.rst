@@ -143,11 +143,29 @@
  .. image:: _images/PRM_MIN.png
     :width: 600
     :height: 550
-    :alt: l3_ha_bundle
+    :alt: PRMMIN
 
 
+.. revealjs:: Staging Env
+ :title-heading: h2
+ :subtitle: 
+ :subtitle-heading: h4
+
+ .. image:: _images/PRM_MED.png
+    :width: 600
+    :height: 550
+    :alt: PRMMED
 
 
+.. revealjs:: Production Env
+ :title-heading: h2
+ :subtitle: 
+ :subtitle-heading: h4
+
+ .. image:: _images/PRM_MAX.png
+    :width: 600
+    :height: 550
+    :alt: PRMMAX
 
 .. revealjs:: Questions?
 
