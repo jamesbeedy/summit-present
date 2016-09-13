@@ -135,21 +135,11 @@
  :subtitle: 
  :subtitle-heading: h4
 
- .. image:: _images/PRM-MIN.png
-    :width: 600
-    :height: 550
-    :alt: PRMMIN
-
 
 .. revealjs:: Staging Env
  :title-heading: h2
  :subtitle: 
  :subtitle-heading: h4
-
- .. image:: _images/PRM-MED.png
-    :width: 600
-    :height: 550
-    :alt: PRMMED
 
 
 .. revealjs:: Production Env
@@ -157,10 +147,6 @@
  :subtitle: 
  :subtitle-heading: h4
 
- .. image:: _images/PRM-MAX.png
-    :width: 600
-    :height: 550
-    :alt: PRMMAX
 
 .. revealjs:: Questions?
 
