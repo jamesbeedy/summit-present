@@ -72,6 +72,39 @@
    * - Community Driven
 
 
+.. revealjs:: Essentials
+ :subtitle: Let us deploy, but first ...
+
+
+ .. rst-class:: fragment
+
+       - zfs
+       - local apt cache
+       - reverse proxy
+
+
+.. revealjs:: apt-cacher-ng
+ :subtitle: pass-through https
+
+ .. rv_code::
+
+     # acng.conf
+
+     PassThroughPattern: .*:443$
+
+
+.. revealjs:: Reverse Proxy
+ :subtitle: Give us access to our damn containers!
+
+    Port based, or domain based routing is a great way to access your containers!
+    This can be accomplished by a means of your choosing, generally I find NGINX, and/or HAProxy to be sufficient.
+
+ .. rst-class:: fragment
+
+    - NGINX
+    - HAPROXY
+    
+
 .. revealjs:: Application Environments = Juju models
  :title-heading: h2
  :subtitle: Juju models are a great way to separate app environments 
@@ -102,37 +135,18 @@
         - 3x database - AWS
         - 3x webapp - AWS
 
+.. revealjs:: Test Env
+ :title-heading: h2
+ :subtitle: 
+ :subtitle-heading: h4
+
+ .. image:: _images/PRM_MIN.png
+    :width: 600
+    :height: 550
+    :alt: l3_ha_bundle
 
 
-.. revealjs:: Essentials
- :subtitle: Let us deploy, but first ...
 
-
- .. rst-class:: fragment
-
-       - zfs
-       - local apt cache
-       - reverse proxy
-
-
-.. revealjs:: apt-cacher-ng
- :subtitle: pass-through https
-
- .. rv_code::
-
-     # acng.conf
-
-     PassThroughPattern: .*:443$
-
-
-.. revealjs:: Reverse Proxy
- :subtitle: Give us access to our damn containers!
-
-  .. rv_code::
-
-    
-
-    $juju expose haproxy
 
 
 .. revealjs:: Questions?
