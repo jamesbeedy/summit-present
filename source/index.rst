@@ -163,6 +163,19 @@
     :height: 550
     :alt: PRMMAX
 
+
+.. revealjs:: To Juju, its all the same
+ :title-heading: h2
+ :subtitle: 
+ :subtitle-heading: h4
+
+ .. image:: _images/juju_gui.png
+    :width: 800
+    :height: 550
+    :alt: JUJUGUI
+
+
+
 .. revealjs:: Questions?
 
 
