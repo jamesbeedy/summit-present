@@ -104,144 +104,35 @@
 
 
 
-.. revealjs:: Coros
- :subtitle: Let us deploy
+.. revealjs:: Essentials
+ :subtitle: Let us deploy, but first ...
 
 
  .. rst-class:: fragment
 
+       - zfs
+       - local apt cache
+       - reverse proxy
 
-     `Hacluster charm <https://jujucharms.com/hacluster>`_
 
-       - Corosync
-       - Pacemaker
-       - Haproxy
-
-.. revealjs:: Let's start small
- :subtitle: this presentation
+.. revealjs:: apt-cacher-ng
+ :subtitle: pass-through https
 
  .. rv_code::
 
-     # Deploy this presentation
+     # acng.conf
 
-     $ juju deploy cs:~jamesbeedy/present
-     $ juju deploy present-haproxy --config haproxy.yaml
-     $ juju add-relation present-haproxy present
+     PassThroughPattern: .*:443$
 
 
-
-.. revealjs:: A bit larger
- :subtitle: HA Mediawiki
+.. revealjs:: Reverse Proxy
+ :subtitle: Give us access to our damn containers!
 
   .. rv_code::
 
-    # Deploy HA Mediawiki - Scale out behind haproxy
+    
 
-    $juju deploy haproxy
-    $juju deploy mediawiki
-    $juju deploy mysql
-    $juju add-relation mediawiki:db mysql
-    $juju add-relation mediawiki haproxy
     $juju expose haproxy
-
-
-.. revealjs:: HA Wordpress
-
-      .. rv_code::
-
-        # Deploy HA Wordpress - Inherent Scaling - no haproxy
-
-        $juju deploy mysql
-        $juju deploy wordpress
-        $juju add-relation mysql wordpress
-        $juju expose wordpress
-
-
-
-.. revealjs:: Example Juju Openstack Bundle
-
-   .. image:: _images/system76_logo_primary.png
-    :width: 600
-    :height: 550
-    :alt: l3_ha_bundle
-
-
-.. revealjs:: Juju Status View
-
-   .. image:: _images/wjst.png
-    :width: 600
-    :height: 550
-    :target: https://raw.githubusercontent.com/jamesbeedy/os-ha-meetup-present/master/source/_images/wjst.png
-    :alt: juju_status_view
-
-.. revealjs:: Juju Gui View
-
-   `juju gui <https://demo.jujucharms.com/>`_
-
-   .. image:: _images/juju_gui.png
-    :width: 700
-    :height: 550
-    :alt: juju_gui_view
-    :target: https://raw.githubusercontent.com/jamesbeedy/os-ha-meetup-present/master/source/_images/juju_gui.png
-
-
-.. revealjs:: Deploy MySQL
-
-   .. raw:: html
-     <script src="https://assets.ubuntu.com/v1/juju-cards-v1.0.9.js"></script>
-     <div class="juju-card" data-id="trusty/mysql-36"></div>
-
-  .. rv_code::
-
-      $ juju deploy mysql
-      $ juju deploy mysql-slave -n2
-      $ juju add-relation mysql:master mysql-slave:slave
-
-
-.. revealjs:: Deploy PostgreSQL Cluster
-
-
-  .. rv_code::
-      $ juju deploy postgresql
-      $ juju add-unit postgresql -n2
-
-
-.. revealjs:: Deploy Percona-cluster - ExtraDB
-
-   .. raw:: html
-     <script src="https://assets.ubuntu.com/v1/juju-cards-v1.0.9.js"></script>
-     <div class="juju-card" data-id="trusty/percona-cluster-129"></div>
-
-
-  .. rv_code::
-
-      $ juju deploy percona-cluster -n 3 --config charmconf.yaml
-      $ juju deploy hacluster percona-hacluster --config charmconf.yaml
-      $ juju add-relation percona-hacluster percona-cluster
-
-
-.. revealjs:: Deploy MongoDB
-
-     Replica Set
-
-  .. rv_code::
-
-      # Replica Set
-      $ juju deploy mongodb -n 2
-      $ juju add-unit mongodb -n 2
-
-      # Sharded Cluster
-
-      $ juju deploy mongodb configsvr --config charmconf.yaml -n3
-      $ juju deploy mongodb mongos
-      $ juju deploy mongodb shard1 --config charmconf.yaml -n3
-      $ juju deploy mongodb shard2 --config charmconf.yaml -n3
-      $ juju deploy mongodb shard3 --config charmconf.yaml -n3
-      $ juju add-relation mongos:mongos-cfg configsvr:configsvr
-      $ juju add-relation mongos:mongos shard1:database
-      $ juju add-relation mongos:mongos shard2:database
-      $ juju add-relation mongos:mongos shard3:database
-
 
 
 .. revealjs:: Questions?
